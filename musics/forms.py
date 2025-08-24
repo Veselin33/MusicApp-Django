@@ -12,16 +12,13 @@ class AlbumCreateForm(AlbumBaseForm):
     pass
 
 class AlbumEditForm(AlbumBaseForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for fields in self.fields.values():
-            fields.widget.attrs['disabled'] = True
+    pass
 
 class AlbumDeleteForm(AlbumBaseForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for fields in self.fields.values():
-            fields.widget.attrs['disabled'] = True
+            fields.widget.attrs['ReadOnly'] = True
 
 class SongBaseForm(forms.ModelForm):
     class Meta:
